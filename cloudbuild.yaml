@@ -1,0 +1,7 @@
+steps:
+- name: 'tag'
+  args: ['git tag']
+- name: 'describe'
+  args: ['git describe --tags --always']
+- name: 'log'
+  args: ['git log']
