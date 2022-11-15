@@ -1,5 +1,7 @@
-steps:
-- name: 'describe'
-  args: ['-c', '|', 'git describe --tags --always']
-- name: 'log'
-  args: ['git log']
+- name: gcr.io/cloud-builders/git
+  args:
+    - '-c'
+    - |
+      git tag  # Prints nothing
+      git describe --tags --always  # Prints hash only
+      git log  # Prints only the last commit message
